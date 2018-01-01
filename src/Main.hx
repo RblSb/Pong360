@@ -11,8 +11,6 @@ import js.Browser.window;
 
 class Main {
 	
-	//static var hxt = new hxtelemetry.HxTelemetry();
-	
 	static function main():Void {
 		#if kha_html5 //make html5 canvas resizable
 		document.documentElement.style.padding = "0";

@@ -4,6 +4,7 @@ import kha.Framebuffer;
 import kha.graphics2.Graphics;
 import kha.input.Mouse;
 import kha.Assets;
+import Screen.Pointer;
 import Types.Range;
 using kha.graphics2.GraphicsExtension;
 using Utils.MathExtension;
@@ -107,7 +108,7 @@ class Game extends Screen {
 		for (ball in balls) ball.onResize();
 	}
 	
-	override function onMouseDown(id:Int):Void {
+	override function onMouseDown(p:Pointer):Void {
 		if (Screen.touch) {
 			started = true;
 			return;
@@ -115,8 +116,7 @@ class Game extends Screen {
 		if (!Mouse.get().isLocked()) Mouse.get().lock();
 	}
 	
-	override function onMouseMove(id:Int):Void {
-		var p = pointers[id];
+	override function onMouseMove(p:Pointer):Void {
 		moveX -= p.moveX;
 		if (moveX < 0) moveX = 0;
 		else if (moveX > 360) moveX = 360;
