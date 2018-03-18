@@ -65,7 +65,7 @@ class Player {
 			
 			if (Math.abs(dist).toRad() * radius < (length/2).toRad() * radius + ball.radius) {
 				var ratio = Math.abs(dist) / length * 5;
-				var newAng = angle - dist * ratio + 180;
+				var newAng = angle + dist * ratio + 180;
 				ball.setVector(newAng);
 				
 				if (ball.color != color) {

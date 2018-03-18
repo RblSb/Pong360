@@ -34,34 +34,8 @@ class Main {
 	}
 	
 	static function init():Void {
-		//khacks();
 		var loader = new Loader();
 		loader.init();
-	}
-	
-	static inline function khacks():Void {
-		#if kha_html5 //block browser hotkeys and fix meta key
-		var meta_key = false;
-		var keyDown = SystemImpl.khanvas.onkeydown;
-		SystemImpl.khanvas.onkeydown = function(e) {
-			if (e.keyCode == KeyCode.Meta) meta_key = true;
-			else if (meta_key) SystemImpl.khanvas.onkeyup(e);
-			if (e.keyCode == KeyCode.Backspace) e.preventDefault();
-			keyDown(e);
-		}
-		
-		var keyUp = SystemImpl.khanvas.onkeyup;
-		SystemImpl.khanvas.onkeyup = function(e) {
-			if (e.keyCode == KeyCode.Meta) meta_key = false;
-			keyUp(e);
-		}
-		
-		var keyPress = SystemImpl.khanvas.onkeypress;
-		SystemImpl.khanvas.onkeypress = function(e) {
-			if (meta_key) e.preventDefault();
-			keyPress(e);
-		}
-		#end
 	}
 	
 }

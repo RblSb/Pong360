@@ -20,8 +20,8 @@ class Utils {
 		return Math.sqrt(Math.pow(p.x - p2.x, 2) + Math.pow(p.y - p2.y, 2));
 	}
 	
-	public static inline function distAng(ang:Float, ang2:Float):Float {
-		var a = ang - ang2;
+	public static inline function distAng(ang:Float, toAng:Float):Float {
+		var a = toAng - ang;
 		if (a < -180) a += 360;
 		if (a > 180) a -= 360;
 		return a;
@@ -82,13 +82,21 @@ class Utils {
 	
 }
 
+class Easing {
+	
+	public static inline function easeInOutQuad(t:Float) {
+		return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+	}
+	
+}
+
 class MathExtension {
 	
-	inline public static function toRad(degrees:Float):Float {
+	public static inline function toRad(degrees:Float):Float {
 		return degrees * Math.PI / 180;
 	}
 	
-	inline public static function toDeg(radians:Float):Float {
+	public static inline function toDeg(radians:Float):Float {
 		return radians * 180 / Math.PI;
 	}
 	

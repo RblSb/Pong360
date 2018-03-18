@@ -19,7 +19,7 @@ class Loader {
 		System.removeRenderListener(onRender);
 		
 		var sets = Settings.read();
-		Screen._init(sets.touchMode);
+		Screen.init({touch: sets.touchMode, samplesPerPixel: 2});
 		
 		var game = new Game();
 		game.show();

@@ -1,6 +1,6 @@
 package game;
 
-import kha.Framebuffer;
+import kha.Canvas;
 import kha.graphics2.Graphics;
 import kha.input.Mouse;
 import kha.Assets;
@@ -131,7 +131,7 @@ class Game extends Screen {
 		}
 	}
 	
-	override function onRender(frame:Framebuffer):Void {
+	override function onRender(frame:Canvas):Void {
 		var g = frame.g2;
 		g.begin(true, 0xFF171717);
 		g.color = lineColor;
@@ -143,7 +143,6 @@ class Game extends Screen {
 			for (player in players) player.draw(g);
 			for (ball in balls) ball.draw(g);
 		}
-		debugScreen(g);
 		g.end();
 	}
 	
