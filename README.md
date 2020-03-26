@@ -1,3 +1,3 @@
 ## Pong360
 
-[Play Online](http://mssite.org/projects/Pong360/)
+[Play Online](https://rblsb.github.io/Pong360/)
